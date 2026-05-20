@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_additional_contact_list_user,additional.contact.list user,model_additional_contact_list,base.group_user,1,1,1,1
+access_additional_contact_line_user,additional.contact.line user,model_additional_contact_line,base.group_user,1,1,1,1
+access_additional_contact_link_user,additional.contact.link user,model_additional_contact_link,base.group_user,1,1,1,1
+access_additional_contact_role_user,additional.contact.role user,model_additional_contact_role,base.group_user,1,0,0,0
+access_additional_contact_role_manager,additional.contact.role manager,model_additional_contact_role,base.group_system,1,1,1,1
+access_additional_contact_involvement_user,additional.contact.involvement user,model_additional_contact_involvement,base.group_user,1,0,0,0

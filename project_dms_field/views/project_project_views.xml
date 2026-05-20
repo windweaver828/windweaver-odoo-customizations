@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="project_project_form_dms_documents" model="ir.ui.view">
+        <field name="name">project.project.form.dms.documents</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='description']" position="after">
+                <page string="Documents" name="dms_documents">
+                    <field name="dms_directory_ids"
+                           mode="dms_list"
+                           context="{'default_res_model': 'project.project', 'default_res_id': id}"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

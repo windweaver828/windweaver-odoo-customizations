@@ -1,0 +1,10 @@
+<odoo>
+    <delete model="ir.ui.menu"
+            search="[('name', '=', 'Settings'), ('parent_id', '=', ref('additional_contacts.menu_additional_contacts_config'))]"/>
+    <delete model="ir.actions.act_window"
+            search="[('name', '=', 'Additional Contacts Settings'), ('res_model', '=', 'res.config.settings')]"/>
+    <delete model="ir.ui.view"
+            search="[('model', '=', 'res.config.settings'), '|', ('name', '=', 'additional.contacts.res.config.settings.form'), ('name', '=', 'res.config.settings.view.form.inherit.additional.contacts')]"/>
+    <delete model="ir.config_parameter"
+            search="[('key', '=', 'additional_contacts.roles_sort_alpha')]"/>
+</odoo>

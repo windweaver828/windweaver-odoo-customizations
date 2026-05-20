@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="global_search.GlobalSearchMenu">
+        <Dropdown position="'bottom-end'" state="dropdown">
+            <button t-ref="searchButton" t-on-click="onSearchButtonClick" title="Global Search (Ctrl+Shift+F)">
+                <i class="fa fa-lg fa-search" role="img" aria-label="Search"/>
+            </button>
+            <t t-set-slot="content">
+                <div class="bb-global-search-popup o_cp_searchview p-2" role="search">
+                    <div class="o_searchview form-control d-flex align-items-center py-1" role="search" aria-autocomplete="list">
+                        <i class="o_searchview_icon oi oi-search me-2" role="img" aria-label="Search..." title="Search..." />
+                        <div class="o_searchview_input_container d-flex flex-grow-1 flex-wrap gap-1">
+                            <input type="text"
+                                   class="o_searchview_input o_input flex-grow-1 w-auto border-0"
+                                   accesskey="Q"
+                                   placeholder="Search..."
+                                   role="searchbox"
+                                   t-ref="searchInput"
+                                   t-model="state.query"
+                                   t-on-input="onSearchInput"
+                                   t-on-keydown="onSearchInputKeydown"/>
+                        </div>
+                    </div>
+
+                    <div class="bb-global-search-results mt-2">
+                        <div t-if="state.groups.length === 0 &amp;&amp; state.showingRecent"
+                             class="o-mail-ActivityMenu-empty align-items-center text-muted p-2 opacity-50 d-flex justify-content-center">
+                            <span>No recent records.</span>
+                        </div>
+                        <div t-if="state.groups.length === 0 &amp;&amp; state.searched"
+                             class="o-mail-ActivityMenu-empty align-items-center text-muted p-2 opacity-50 d-flex justify-content-center">
+                            <span>No Search Result Found.</span>
+                        </div>
+
+                        <t t-foreach="state.groups" t-as="group" t-key="group.name">
+                            <div class="text-muted text-uppercase fw-bold small px-2 pt-2 pb-1 border-bottom" t-out="group.name"/>
+                            <t t-foreach="group.items" t-as="search_result" t-key="search_result.id">
+                                <div t-att-class="'dropdown-item d-flex flex-column py-2 ' + (state.selectedIndex === search_result.global_index ? 'active' : '')"
+                                     role="button"
+                                     tabindex="0"
+                                     t-on-click="(ev) => this.onResultClick(search_result, ev)"
+                                     t-on-auxclick="(ev) => this.onResultAuxClick(search_result, ev)">
+                                    <div class="d-flex align-items-start justify-content-between gap-2">
+                                        <span class="text-truncate" name="recordTitle" t-out="search_result.name"/>
+                                        <span class="badge rounded-pill text-bg-light border flex-shrink-0" t-out="search_result.label || search_result.resModel"/>
+                                    </div>
+                                    <small t-if="search_result.match_info" class="text-muted mt-1" t-out="search_result.match_info"/>
+                                </div>
+                            </t>
+                        </t>
+                    </div>
+                </div>
+            </t>
+        </Dropdown>
+    </t>
+</templates>

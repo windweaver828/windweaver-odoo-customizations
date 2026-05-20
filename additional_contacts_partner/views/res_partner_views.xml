@@ -1,0 +1,25 @@
+<odoo>
+    <record id="view_partner_form_additional_contact_involvement" model="ir.ui.view">
+        <field name="name">res.partner.form.additional.contact.involvement</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form//notebook" position="inside">
+                <page string="Involved In" name="additional_contacts_involved_in">
+
+<field name="additional_contact_involvement_ids" nolabel="1" readonly="1">
+    <list string="Involved In" create="0" edit="0" delete="0">
+        <button name="action_open_record" type="object" icon="fa-external-link" title="Open"/>
+        <field name="link_name" string="Record"/>
+        <field name="model_description" string="Type" optional="show"/>
+        <field name="role_id"/>
+        <field name="notes" optional="show"/>
+        <field name="list_id" optional="hide"/>
+    </list>
+</field>
+
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

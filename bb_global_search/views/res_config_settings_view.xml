@@ -1,0 +1,44 @@
+<odoo>
+    <record id="res_config_settings_form_view" model="ir.ui.view">
+        <field name="name">Res Config Settings: Global Search</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='languages']" position="after">
+                <div id="global_search">
+                    <block title="Search" name="search_setting_container">
+                        <setting>
+                            <div class="content-group">
+                                <div class="row mt8">
+                                    <label class="col-lg-3" string="Models" for="global_search_model_ids"/>
+                                    <field name="global_search_model_ids" widget="many2many_tags"
+                                           options="{'no_create': True, 'no_open': True}"
+                                           title="Models available for global search"/>
+                                </div>
+                                <div class="text-muted mt8">
+                                    Enhanced search is available for selected Contacts, Leads/Opportunities,
+                                    Invoices/Bills, and Projects when their apps/models are installed.
+                                    Other selected models use Odoo's standard name search.
+                                </div>
+                                <div class="row mt16">
+                                    <label class="col-lg-3" string="Max Results Per Group" for="global_search_limit_per_group"/>
+                                    <field name="global_search_limit_per_group"/>
+                                    <div class="text-muted col-lg-9 offset-lg-3">
+                                        Leave blank or set to 0 for no enforced per-group limit.
+                                    </div>
+                                </div>
+                                <div class="row mt8">
+                                    <label class="col-lg-3" string="Max Total Results" for="global_search_limit_total"/>
+                                    <field name="global_search_limit_total"/>
+                                    <div class="text-muted col-lg-9 offset-lg-3">
+                                        Leave blank or set to 0 for no enforced total limit.
+                                    </div>
+                                </div>
+                            </div>
+                        </setting>
+                    </block>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

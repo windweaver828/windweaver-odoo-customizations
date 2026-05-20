@@ -1,0 +1,62 @@
+<odoo noupdate="1">
+    <record id="role_primary_customer" model="additional.contact.role">
+        <field name="sequence">10</field>
+        <field name="name">Primary Contact</field>
+    </record>
+    <record id="role_homeowner" model="additional.contact.role">
+        <field name="sequence">20</field>
+        <field name="name">Homeowner</field>
+    </record>
+    <record id="role_occupant" model="additional.contact.role">
+        <field name="sequence">30</field>
+        <field name="name">Occupant</field>
+    </record>
+    <record id="role_spouse" model="additional.contact.role">
+        <field name="sequence">40</field>
+        <field name="name">Spouse</field>
+    </record>
+    <record id="role_tenant" model="additional.contact.role">
+        <field name="sequence">50</field>
+        <field name="name">Tenant</field>
+    </record>
+    <record id="role_insurance_adjuster" model="additional.contact.role">
+        <field name="sequence">60</field>
+        <field name="name">Insurance Adjuster</field>
+    </record>
+    <record id="role_public_adjuster" model="additional.contact.role">
+        <field name="sequence">70</field>
+        <field name="name">Public Adjuster</field>
+    </record>
+    <record id="role_mortgage_contact" model="additional.contact.role">
+        <field name="sequence">80</field>
+        <field name="name">Mortgage Contact</field>
+    </record>
+    <record id="role_property_manager" model="additional.contact.role">
+        <field name="sequence">90</field>
+        <field name="name">Property Manager</field>
+    </record>
+    <record id="role_estimator" model="additional.contact.role">
+        <field name="sequence">100</field>
+        <field name="name">Estimator</field>
+    </record>
+    <record id="role_project_manager" model="additional.contact.role">
+        <field name="sequence">110</field>
+        <field name="name">Project Manager</field>
+    </record>
+    <record id="role_subcontractor" model="additional.contact.role">
+        <field name="sequence">120</field>
+        <field name="name">Subcontractor</field>
+    </record>
+    <record id="role_vendor" model="additional.contact.role">
+        <field name="sequence">130</field>
+        <field name="name">Vendor</field>
+    </record>
+    <record id="role_attorney" model="additional.contact.role">
+        <field name="sequence">140</field>
+        <field name="name">Attorney</field>
+    </record>
+    <record id="role_other" model="additional.contact.role">
+        <field name="sequence">999</field>
+        <field name="name">Other</field>
+    </record>
+</odoo>

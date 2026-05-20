@@ -1,0 +1,51 @@
+<odoo>
+    <record id="view_additional_contact_role_list" model="ir.ui.view">
+        <field name="name">additional.contact.role.list</field>
+        <field name="model">additional.contact.role</field>
+        <field name="arch" type="xml">
+            <list string="Additional Contact Roles" editable="bottom" default_order="sequence, name">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="active" optional="show"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_additional_contact_role_form" model="ir.ui.view">
+        <field name="name">additional.contact.role.form</field>
+        <field name="model">additional.contact.role</field>
+        <field name="arch" type="xml">
+            <form string="Additional Contact Role">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="sequence"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_additional_contact_roles" model="ir.actions.act_window">
+        <field name="name">Additional Contact Roles</field>
+        <field name="res_model">additional.contact.role</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create roles for additional contacts.</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_additional_contacts_config"
+              name="Additional Contacts"
+              parent="contacts.res_partner_menu_config"
+              sequence="60"
+              groups="base.group_system"/>
+
+    <menuitem id="menu_additional_contact_roles"
+              name="Roles"
+              parent="menu_additional_contacts_config"
+              action="action_additional_contact_roles"
+              sequence="10"
+              groups="base.group_system"/>
+</odoo>

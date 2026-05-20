@@ -1,0 +1,44 @@
+/* Keep the global search dropdown to a single vertical scrollbar.
+ * This is plain CSS intentionally. Odoo's SCSS compiler can choke on
+ * modern CSS functions/selectors, so do not load this as .scss.
+ */
+.o-dropdown--menu:has(.bb-global-search-popup),
+.dropdown-menu:has(.bb-global-search-popup) {
+    max-height: none !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+}
+
+.bb-global-search-popup {
+    display: flex;
+    flex-direction: column;
+    width: 720px;
+    max-width: calc(100vw - 2rem);
+    min-width: 420px;
+    max-height: calc(100vh - 7rem);
+    overflow: hidden !important;
+}
+
+.bb-global-search-popup .o_searchview {
+    flex: 0 0 auto;
+}
+
+.bb-global-search-results {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+}
+
+.bb-global-search-results .dropdown-item {
+    white-space: normal;
+}
+
+@media (max-width: 575.98px) {
+    .bb-global-search-popup {
+        width: calc(100vw - 1rem);
+        min-width: 0;
+        max-width: calc(100vw - 1rem);
+        max-height: calc(100vh - 5rem);
+    }
+}

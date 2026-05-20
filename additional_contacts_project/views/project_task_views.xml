@@ -1,0 +1,32 @@
+<odoo>
+    <record id="view_project_task_form_additional_contacts" model="ir.ui.view">
+        <field name="name">project.task.form.additional.contacts</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form//notebook" position="inside">
+                <page string="Additional Contacts" name="additional_contacts">
+                    <field name="additional_contact_list_id" invisible="1"/>
+                    <p class="text-muted" invisible="additional_contact_list_id">
+                        This task does not have a project additional contact list yet.
+                    </p>
+                    <field name="additional_contact_line_ids"
+                           nolabel="1"
+                           invisible="not additional_contact_list_id"
+                           domain="[('list_id', '=', additional_contact_list_id)]"
+                           options="{'no_create': True, 'no_create_edit': True}">
+                        <list string="Task Additional Contacts" create="0" edit="0">
+                            <field name="role_id"/>
+                            <field name="partner_id"/>
+                            <field name="company_id" optional="show"/>
+                            <field name="phone" optional="show"/>
+                            <field name="mobile" optional="show"/>
+                            <field name="email" optional="show"/>
+                            <field name="notes" optional="show"/>
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

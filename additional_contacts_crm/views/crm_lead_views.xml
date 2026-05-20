@@ -1,0 +1,33 @@
+<odoo>
+    <record id="view_crm_lead_form_additional_contacts" model="ir.ui.view">
+        <field name="name">crm.lead.form.additional.contacts</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form//notebook" position="inside">
+
+<page string="Additional Contacts" name="additional_contacts">
+    <group invisible="additional_contact_list_id">
+        <p class="text-muted">No additional contact list has been created for this record yet.</p>
+        <button name="action_ensure_additional_contacts" type="object" string="Initialize Additional Contacts" class="btn-primary"/>
+    </group>
+    <field name="additional_contact_list_id" invisible="1"/>
+    <field name="additional_contact_line_ids" nolabel="1" invisible="not additional_contact_list_id" context="{'default_list_id': additional_contact_list_id}">
+        <list editable="bottom" default_order="is_origin desc, sequence, id">
+            <field name="sequence" widget="handle" readonly="is_origin"/>
+            <field name="role_id" readonly="is_origin"/>
+            <field name="partner_id" options="{'no_create_edit': False}" readonly="is_origin"/>
+            <field name="company_id" readonly="1" optional="show"/>
+            <field name="phone" readonly="1" optional="show"/>
+            <field name="mobile" readonly="1" optional="show"/>
+            <field name="email" readonly="1" optional="show"/>
+            <field name="notes" optional="show"/>
+            <field name="is_origin" readonly="1" optional="hide"/>
+        </list>
+    </field>
+</page>
+
+            </xpath>
+        </field>
+    </record>
+</odoo>

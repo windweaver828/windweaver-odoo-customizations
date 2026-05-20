@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        By default, clicking a card in the main Projects kanban calls
+        project.project.action_view_tasks, which opens that project's tasks.
+
+        Removing the root kanban action restores the normal kanban behavior:
+        clicking the card opens the project record/form instead. The existing
+        task/stat buttons on the card still keep their own explicit actions.
+    -->
+    <record id="project_project_kanban_open_settings_on_card_click" model="ir.ui.view">
+        <field name="name">project.project.kanban.open.settings.on.card.click</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project_kanban"/>
+        <field name="priority">999</field>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban" position="attributes">
+                <attribute name="action"/>
+                <attribute name="type"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
