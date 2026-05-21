@@ -2,9 +2,10 @@
     "name": "DMS File Description",
     "summary": "Adds editable descriptions to DMS files and displays them in DMS views",
     "version": "18.0.1.0.9",
-    "category": "Document Management",
-    "author": "Windweaver Customizations",
     "license": "AGPL-3",
+    "category": "Document Management",
+    "author": "Keith Brandenburg",
+    "website": "https://www.windweaver.org",
     "depends": ["dms"],
     "assets": {
         "web.assets_backend": [

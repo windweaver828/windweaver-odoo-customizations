@@ -2,9 +2,10 @@
     "name": "Additional Contacts - Full Bundle",
     "summary": "Convenience addon installing the full Additional Contacts bundle",
     "version": "18.0.1.0.1",
-    "category": "Contacts",
-    "author": "Windweaver Custom",
     "license": "AGPL-3",
+    "category": "Contacts",
+    "author": "Keith Brandenburg",
+    "website": "https://www.windweaver.org",
     "depends": [
         "additional_contacts",
         "additional_contacts_crm",

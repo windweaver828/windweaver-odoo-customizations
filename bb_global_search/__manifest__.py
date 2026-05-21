@@ -15,7 +15,9 @@ Key Features:
 - Search across selected models
 - Navigate to form view directly from results
     """,
-    "author": "Dhrushil Butani",
+    "author": "Keith Brandenburg (Rewrote Original), Dhrushil Butani (Original Author)",
+    "license": "AGPL-3",
+    "website": "https://www.windweaver.org",
     "depends": ["base", "web"],
     'images': ['static/description/banner.png'],
     "data": [
@@ -30,5 +32,4 @@ Key Features:
     },
     "installable": True,
     "application": True,
-    "license": "AGPL-3",
 }
