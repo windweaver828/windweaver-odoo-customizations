@@ -4,7 +4,7 @@
     "version": "18.0.1.0.2",
     "category": "Document Management",
     "license": "AGPL-3",
-    "author": "Windweaver Customizations",
+    "author": "Keith Brandenburg",
     "depends": ["project", "dms_field"],
     "data": [
         "views/project_project_views.xml",
