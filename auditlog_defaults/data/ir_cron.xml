@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Keep audit logs for 60 days. OCA auditlog's cleanup method accepts
+         days to keep and a batch limit. This cron is inactive by default in
+         the base auditlog module, so this module creates/enables its own. -->
+    <record id="ir_cron_auditlog_autovacuum_60_days" model="ir.cron">
+        <field name="name">Auto-vacuum audit logs older than 60 days</field>
+        <field name="model_id" ref="auditlog.model_auditlog_log"/>
+        <field name="state">code</field>
+        <field name="code">model.autovacuum(60, 1000)</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="active" eval="True"/>
+    </record>
+</odoo>
